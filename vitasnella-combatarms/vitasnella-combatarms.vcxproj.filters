@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="header files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="source files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="header files\classes">
+      <UniqueIdentifier>{6cf7dda7-761b-4be6-a347-4727008093fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source files\features">
+      <UniqueIdentifier>{2f599945-7627-4a5c-a404-0d273ec56e27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header files\features">
+      <UniqueIdentifier>{4d734b55-31c1-4a59-b4af-afe0bfa95793}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header files\utils">
+      <UniqueIdentifier>{9e875db1-0597-43fa-b7bb-d0c6f236a23e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="entrypoint.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="features\esp.cpp">
+      <Filter>source files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="features\misc.cpp">
+      <Filter>source files\features</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="classes\entity.hh">
+      <Filter>header files\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="features\esp.hh">
+      <Filter>header files\features</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\utils.hh">
+      <Filter>header files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="classes\shell.hh">
+      <Filter>header files\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="classes\interface_mgr.hh">
+      <Filter>header files\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="classes\base_player_mgr.hh">
+      <Filter>header files\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="features\misc.hh">
+      <Filter>header files\features</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
