@@ -71,6 +71,9 @@
     <ClCompile Include="hooks\functions\surface_mgr_invisible.cpp">
       <Filter>source files\hooks\functions</Filter>
     </ClCompile>
+    <ClCompile Include="hooks\functions\update_ammo_from_fire.cpp">
+      <Filter>source files\hooks\functions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="classes\entity.hh">
@@ -134,6 +137,15 @@
       <Filter>header files\classes</Filter>
     </ClInclude>
     <ClInclude Include="classes\weapon_base.hh">
+      <Filter>header files\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="classes\client_info_mgr.hh">
+      <Filter>header files\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="classes\game_client_shell.hh">
+      <Filter>header files\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="classes\clt_base.hh">
       <Filter>header files\classes</Filter>
     </ClInclude>
   </ItemGroup>

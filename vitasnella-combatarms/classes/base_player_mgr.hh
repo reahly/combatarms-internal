@@ -1,6 +1,5 @@
 #pragma once
 #include <cstdint>
-#include "shell.hh"
 #include "weapon_base.hh"
 #include "../utils/utils.hh"
 
@@ -14,11 +13,11 @@ struct base_player_mgr_t {
 	}
 
 	weapon_base_t* get_current_client_weapon( ) {
-		auto* const get_current_client_weapon_fn = reinterpret_cast<weapon_base_t*( __fastcall* )( uintptr_t )>( 0x373DF810 )( reinterpret_cast<uintptr_t>( this ) );
+		auto* const get_current_client_weapon_fn = reinterpret_cast<weapon_base_t*( __fastcall* )( uintptr_t )>( 0x373DF810 );
 		if ( !get_current_client_weapon_fn )
 			return nullptr;
 
-		return get_current_client_weapon_fn;
+		return get_current_client_weapon_fn( reinterpret_cast<uintptr_t>( this ) );
 	}
 
 	int get_current_weaponid( ) {

@@ -157,6 +157,7 @@
     <ClCompile Include="features\misc.cpp" />
     <ClCompile Include="hooks\functions\start_weapon_recoil.cpp" />
     <ClCompile Include="hooks\functions\surface_mgr_invisible.cpp" />
+    <ClCompile Include="hooks\functions\update_ammo_from_fire.cpp" />
     <ClCompile Include="hooks\hooks.cpp" />
     <ClCompile Include="hooks\library\buffer.cpp" />
     <ClCompile Include="hooks\library\hde\hde32.c" />
@@ -167,7 +168,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="classes\base_player_mgr.hh" />
+    <ClInclude Include="classes\client_info_mgr.hh" />
+    <ClInclude Include="classes\clt_base.hh" />
     <ClInclude Include="classes\entity.hh" />
+    <ClInclude Include="classes\game_client_shell.hh" />
     <ClInclude Include="classes\interface_mgr.hh" />
     <ClInclude Include="classes\shell.hh" />
     <ClInclude Include="classes\weapon.hh" />
