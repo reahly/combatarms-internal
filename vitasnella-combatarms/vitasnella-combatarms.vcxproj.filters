@@ -21,6 +21,18 @@
     <Filter Include="header files\utils">
       <UniqueIdentifier>{9e875db1-0597-43fa-b7bb-d0c6f236a23e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="header files\hooks">
+      <UniqueIdentifier>{2ebb7e20-ffed-42ef-8f25-80aa1ad25f76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source files\hooks">
+      <UniqueIdentifier>{8a52df55-75b6-4d13-a82a-22fd488b81ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source files\hooks\functions">
+      <UniqueIdentifier>{22d8a438-8c52-4195-8856-5db0fcc1e727}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header files\hooks\library">
+      <UniqueIdentifier>{7541ca48-f9e1-460f-99f1-260f02f429b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="entrypoint.cpp">
@@ -31,6 +43,33 @@
     </ClCompile>
     <ClCompile Include="features\misc.cpp">
       <Filter>source files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\hooks.cpp">
+      <Filter>source files\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\functions\start_weapon_recoil.cpp">
+      <Filter>source files\hooks\functions</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\library\hook.cpp">
+      <Filter>header files\hooks\library</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\library\toast.c">
+      <Filter>header files\hooks\library</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\library\trampoline.cpp">
+      <Filter>header files\hooks\library</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\library\hde\hde32.c">
+      <Filter>header files\hooks\library</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\library\hde\hde64.c">
+      <Filter>header files\hooks\library</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\library\buffer.cpp">
+      <Filter>header files\hooks\library</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\functions\surface_mgr_invisible.cpp">
+      <Filter>source files\hooks\functions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +93,48 @@
     </ClInclude>
     <ClInclude Include="features\misc.hh">
       <Filter>header files\features</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\hooks.hh">
+      <Filter>header files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\library\minhook.h">
+      <Filter>header files\hooks\library</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\library\toast.h">
+      <Filter>header files\hooks\library</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\library\trampoline.h">
+      <Filter>header files\hooks\library</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\library\hde\hde32.h">
+      <Filter>header files\hooks\library</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\library\hde\hde64.h">
+      <Filter>header files\hooks\library</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\library\hde\pstdint.h">
+      <Filter>header files\hooks\library</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\library\hde\table32.h">
+      <Filter>header files\hooks\library</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\library\hde\table64.h">
+      <Filter>header files\hooks\library</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\library\buffer.h">
+      <Filter>header files\hooks\library</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\vector3d.hh">
+      <Filter>header files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="classes\weapon.hh">
+      <Filter>header files\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="classes\weapon_mgr.hh">
+      <Filter>header files\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="classes\weapon_base.hh">
+      <Filter>header files\classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,10 +1,10 @@
 #include <string>
 #include <thread>
 #include <Windows.h>
-#include "classes/base_player_mgr.hh"
-#include "features/esp.hh"
 #include "classes/interface_mgr.hh"
+#include "features/esp.hh"
 #include "features/misc.hh"
+#include "hooks/hooks.hh"
 
 uintptr_t shell_address;
 
@@ -16,6 +16,12 @@ void __stdcall init( ) {
 			Sleep( 250 );
 		}
 
+		if ( static auto done = false; !done ) {
+			hooks::init( );
+			
+			done = true;
+		}
+
 		auto* const interface_mgr = interface_mgr_t::get( );
 		if ( !interface_mgr )
 			continue;
@@ -23,12 +29,6 @@ void __stdcall init( ) {
 		if ( interface_mgr->in_game( ) ) {
 			misc::init( );
 			esp::init( );
-
-			auto* const base_player_mgr = base_player_mgr_t::get( );
-			if ( !base_player_mgr )
-				continue;
-
-			base_player_mgr->unk( )->fly( ) = 1149861888;
 		}
 	}
 }

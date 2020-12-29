@@ -99,7 +99,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
@@ -155,15 +155,38 @@
     <ClCompile Include="entrypoint.cpp" />
     <ClCompile Include="features\esp.cpp" />
     <ClCompile Include="features\misc.cpp" />
+    <ClCompile Include="hooks\functions\start_weapon_recoil.cpp" />
+    <ClCompile Include="hooks\functions\surface_mgr_invisible.cpp" />
+    <ClCompile Include="hooks\hooks.cpp" />
+    <ClCompile Include="hooks\library\buffer.cpp" />
+    <ClCompile Include="hooks\library\hde\hde32.c" />
+    <ClCompile Include="hooks\library\hde\hde64.c" />
+    <ClCompile Include="hooks\library\hook.cpp" />
+    <ClCompile Include="hooks\library\toast.c" />
+    <ClCompile Include="hooks\library\trampoline.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="classes\base_player_mgr.hh" />
     <ClInclude Include="classes\entity.hh" />
     <ClInclude Include="classes\interface_mgr.hh" />
     <ClInclude Include="classes\shell.hh" />
+    <ClInclude Include="classes\weapon.hh" />
+    <ClInclude Include="classes\weapon_base.hh" />
+    <ClInclude Include="classes\weapon_mgr.hh" />
     <ClInclude Include="features\esp.hh" />
     <ClInclude Include="features\misc.hh" />
+    <ClInclude Include="hooks\hooks.hh" />
+    <ClInclude Include="hooks\library\buffer.h" />
+    <ClInclude Include="hooks\library\hde\hde32.h" />
+    <ClInclude Include="hooks\library\hde\hde64.h" />
+    <ClInclude Include="hooks\library\hde\pstdint.h" />
+    <ClInclude Include="hooks\library\hde\table32.h" />
+    <ClInclude Include="hooks\library\hde\table64.h" />
+    <ClInclude Include="hooks\library\minhook.h" />
+    <ClInclude Include="hooks\library\toast.h" />
+    <ClInclude Include="hooks\library\trampoline.h" />
     <ClInclude Include="utils\utils.hh" />
+    <ClInclude Include="utils\vector3d.hh" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
