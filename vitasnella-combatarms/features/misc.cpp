@@ -22,7 +22,7 @@ void fly( ) {
 	if ( !movement_manager )
 		return;
 
-	movement_manager->gravity( ) = GetAsyncKeyState( VK_SPACE ) ? 1100.f : -1100.f;
+	movement_manager->gravity( ) = LI_FN( GetAsyncKeyState ).cached( )( VK_SPACE ) ? 1100.f : -1100.f;
 }
 
 void nospread( ) {

@@ -1,9 +1,11 @@
 #pragma once
+#include <lazy_importer.hh>
+#include <xorstr.hh>
 #include "../utils/utils.hh"
 
 struct shell_t {
 	static shell_t* get( ) {
-		return reinterpret_cast<shell_t*>( GetModuleHandleA( "CShell.dll" ) );
+		return reinterpret_cast<shell_t*>( LI_FN( GetModuleHandleA ).cached( )( _( "CShell.dll" ) ) );
 	}
 	
 	void set_convar_float( const char* name, const float value ) {

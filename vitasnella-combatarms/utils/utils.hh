@@ -1,6 +1,8 @@
 #pragma once
 #include <Windows.h>
 
+#define PI 3.14159265359
+
 namespace utils {
 }
 

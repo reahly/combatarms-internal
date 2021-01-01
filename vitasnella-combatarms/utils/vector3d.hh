@@ -124,27 +124,6 @@ public:
 		return delta.length( );
 	}
 
-	void normalize( );
-	vec3_t normalized( ) const {
-		auto vec = *this;
-		vec.normalize( );
-		return vec;
-	}
-
-	void clamp( ) {
-		normalize( );
-
-		x = std::clamp( x, -89.0f, 89.0f );
-		y = std::clamp( y, -180.0f, 180.0f );
-		z = 0.0f;
-	}
-
-	vec3_t clamped( ) const {
-		auto vec = *this;
-		vec.clamp( );
-		return vec;
-	}
-
 	float normalize_float( ) {
 		const auto len = length( );
 
@@ -169,6 +148,10 @@ public:
 		return x == 0 && y == 0 && z == 0;
 	}
 
+	void print( ) const {
+		printf( "%f | %f | %f \n", x, y, z );
+	}
+	
 	void init( const float ix = 0.0f, const float iy = 0.0f, const float iz = 0.0f ) {
 		x = ix;
 		y = iy;

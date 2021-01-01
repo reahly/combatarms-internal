@@ -1,18 +1,19 @@
 #pragma once
-#include "clt_base.hh"
+#include "../classes/base_player_mgr.hh"
 #include "../utils/vector3d.hh"
 
+struct entity_object_t {
+	OFFSET( vec3_t, position( ), 0xC8 )
+};
+
 struct entity_t {
-	OFFSET( void*, obj( ), 0x10 )
-	OFFSET( WORD, health( ), 0x5cc )
-	OFFSET( byte, team( ), 0x5D0 )
+	OFFSET( entity_object_t*, obj( ), 0x10 )
+	OFFSET( uint16_t, health( ), 0x5CC )
+	OFFSET( uint16_t, team( ), 0x5D0 )
 	OFFSET( bool, dead( ), 0x559 )
+};
 
-	static vec3_t* get_object_pos( void* obj, vec3_t* pos ) {
-		const auto get_object_pos_fn = reinterpret_cast<vec3_t*( __fastcall* )( void*, vec3_t*, void* )>( 0x37482B70 );
-		if ( !get_object_pos_fn )
-			return nullptr;
-
-		return get_object_pos_fn( ctl_base_t::get( ), pos, obj );
-	}
+struct client_info_t {
+	OFFSET( int32_t, id( ), 0x0 )
+	OFFSET( int32_t, team( ), 0xc )
 };

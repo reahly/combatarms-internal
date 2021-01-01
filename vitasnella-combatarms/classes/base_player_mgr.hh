@@ -2,9 +2,14 @@
 #include <cstdint>
 #include "weapon_base.hh"
 #include "../utils/utils.hh"
+#include "../utils/vector3d.hh"
 
 struct movement_manager_t {
 	OFFSET( float, gravity( ), 0xb8 )
+};
+
+struct camera_t {
+	OFFSET( vec3_t, position( ), 0x18 )
 };
 
 struct base_player_mgr_t {
@@ -33,4 +38,6 @@ struct base_player_mgr_t {
 	}
 
 	OFFSET( movement_manager_t*, movement_manager( ), 0x10 )
+	OFFSET( vec3_t, viewangles( ), 0x54 )
+	OFFSET( camera_t*, camera( ), 0x140 )
 };

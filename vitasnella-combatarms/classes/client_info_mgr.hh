@@ -1,4 +1,5 @@
 #pragma once
+#include "entity.hh"
 
 struct client_info_mgr_t {
 	static client_info_mgr_t* get( ) {
@@ -11,5 +12,13 @@ struct client_info_mgr_t {
 			return nullptr;
 
 		return get_client_by_id_fn( this, id );
+	}
+
+	client_info_t* get_local_player( ) {
+		const auto get_local_player_fn = reinterpret_cast<client_info_t*( __fastcall* )( void* )>( 0x371B7CC0 );
+		if ( !get_local_player_fn )
+			return nullptr;
+
+		return get_local_player_fn( this );
 	}
 };

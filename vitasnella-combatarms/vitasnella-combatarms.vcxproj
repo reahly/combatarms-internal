@@ -103,7 +103,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;VITASNELLACOMBATARMS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -153,11 +153,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="entrypoint.cpp" />
+    <ClCompile Include="features\aimbot.cpp" />
     <ClCompile Include="features\esp.cpp" />
     <ClCompile Include="features\misc.cpp" />
     <ClCompile Include="hooks\functions\start_weapon_recoil.cpp" />
-    <ClCompile Include="hooks\functions\surface_mgr_invisible.cpp" />
-    <ClCompile Include="hooks\functions\update_ammo_from_fire.cpp" />
     <ClCompile Include="hooks\hooks.cpp" />
     <ClCompile Include="hooks\library\buffer.cpp" />
     <ClCompile Include="hooks\library\hde\hde32.c" />
@@ -177,6 +176,7 @@
     <ClInclude Include="classes\weapon.hh" />
     <ClInclude Include="classes\weapon_base.hh" />
     <ClInclude Include="classes\weapon_mgr.hh" />
+    <ClInclude Include="features\aimbot.hh" />
     <ClInclude Include="features\esp.hh" />
     <ClInclude Include="features\misc.hh" />
     <ClInclude Include="hooks\hooks.hh" />

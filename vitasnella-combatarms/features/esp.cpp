@@ -2,7 +2,7 @@
 #include "../classes/shell.hh"
 
 void chams( ) {
-	shell_t::get( )->set_convar_float( "SkelModelStencil", 2.f );
+	shell_t::get( )->set_convar_float( _( "SkelModelStencil" ), 2.f );
 }
 
 void esp::init( ) {

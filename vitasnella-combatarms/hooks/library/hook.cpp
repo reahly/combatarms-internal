@@ -31,6 +31,8 @@
 #include <windows.h>
 #include <tlhelp32.h>
 #include <limits.h>
+#include <xorstr.hh>
+
 
 #include "minhook.h"
 #include "buffer.h"
@@ -361,7 +363,7 @@ NTSTATUS MyVirtualProtectEx(
     OUT PULONG              OldAccessProtection 
 )
 {
-    auto* res = static_cast<NtProtectVirtualMemory>( ResolveNtFunc( "NtProtectVirtualMemory" ) );
+    auto* res = static_cast<NtProtectVirtualMemory>( ResolveNtFunc( _( "NtProtectVirtualMemory" ) ) );
     return res (
         ProcessHandle, 
         (PVOID*)&BaseAddress,
