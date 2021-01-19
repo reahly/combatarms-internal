@@ -1,5 +1,7 @@
 #pragma once
 #include <cstdint>
+#include <xorstr.hh>
+
 #include "weapon_base.hh"
 #include "../utils/utils.hh"
 #include "../utils/vector3d.hh"
@@ -18,7 +20,11 @@ struct base_player_mgr_t {
 	}
 
 	weapon_base_t* get_current_client_weapon( ) {
-		auto* const get_current_client_weapon_fn = reinterpret_cast<weapon_base_t*( __fastcall* )( uintptr_t )>( 0x373DF810 );
+		static auto* addr = utils::find_pattern( _( "8B 49 18 85 C9 74 05" ) );
+		if ( !addr )
+			return nullptr;
+		
+		auto* const get_current_client_weapon_fn = reinterpret_cast<weapon_base_t*( __fastcall* )( uintptr_t )>( addr );
 		if ( !get_current_client_weapon_fn )
 			return nullptr;
 
@@ -26,11 +32,15 @@ struct base_player_mgr_t {
 	}
 
 	int get_current_weaponid( ) {
+		static auto* addr = utils::find_pattern( _( "83 79 0C FF 75 06" ) );
+		if ( !addr )
+			return 0;
+		
 		auto* test = *reinterpret_cast<void**>( this + 0x18 );
 		if ( !test )
 			return 0;
 		
-		const auto get_current_weaponid_fn = reinterpret_cast<int( __fastcall* )( void* )>( 0x374BC7C0 )( test );
+		const auto get_current_weaponid_fn = reinterpret_cast<int( __fastcall* )( void* )>( addr )( test );
 		if ( !get_current_weaponid_fn )
 			return 0;
 

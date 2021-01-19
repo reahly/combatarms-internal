@@ -7,7 +7,11 @@ struct client_info_mgr_t {
 	}
 	
 	void* get_client_by_id( const int id ) {
-		const auto get_client_by_id_fn = reinterpret_cast<void*( __fastcall* )( void*, int )>( 0x371B6CD0 );
+		static auto* addr = utils::find_pattern( _( "51 56 8B F1 83 7E 0C 00 74 2B" ) );
+		if ( !addr )
+			return nullptr;
+		
+		const auto get_client_by_id_fn = reinterpret_cast<void*( __fastcall* )( void*, int )>( addr );
 		if ( !get_client_by_id_fn )
 			return nullptr;
 
@@ -15,7 +19,11 @@ struct client_info_mgr_t {
 	}
 
 	client_info_t* get_local_player( ) {
-		const auto get_local_player_fn = reinterpret_cast<client_info_t*( __fastcall* )( void* )>( 0x371B7CC0 );
+		static auto* addr = utils::find_pattern( _( "83 EC 08 56 8B F1 83 7E 0C 00 74 2A" ) );
+		if ( !addr )
+			return nullptr;
+		
+		const auto get_local_player_fn = reinterpret_cast<client_info_t*( __fastcall* )( void* )>( addr );
 		if ( !get_local_player_fn )
 			return nullptr;
 

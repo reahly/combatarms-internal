@@ -33,6 +33,9 @@
     <Filter Include="header files\hooks\library">
       <UniqueIdentifier>{7541ca48-f9e1-460f-99f1-260f02f429b7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source files\utils">
+      <UniqueIdentifier>{71419a50-6e59-4a8c-96be-28582b8c885b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="entrypoint.cpp">
@@ -70,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="features\aimbot.cpp">
       <Filter>source files\features</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\utils.cpp">
+      <Filter>source files\utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

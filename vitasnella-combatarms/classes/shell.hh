@@ -9,12 +9,7 @@ struct shell_t {
 	}
 	
 	void set_convar_float( const char* name, const float value ) {
-		reinterpret_cast<void( __cdecl* )( const char*, float )>( this + 0x35F850 )
-			( name, value );	
-	}
-
-	void set_convar_int( const char* name, const int value ) {
-		reinterpret_cast<void( __cdecl* )( const char*, int )>( this + 0x35F730 )
+		reinterpret_cast<void( __cdecl* )( const char*, float )>( this + 0x35F840 )
 			( name, value );	
 	}
 

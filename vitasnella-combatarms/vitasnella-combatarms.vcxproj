@@ -164,6 +164,7 @@
     <ClCompile Include="hooks\library\hook.cpp" />
     <ClCompile Include="hooks\library\toast.c" />
     <ClCompile Include="hooks\library\trampoline.cpp" />
+    <ClCompile Include="utils\utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="classes\base_player_mgr.hh" />

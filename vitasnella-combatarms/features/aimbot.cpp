@@ -2,6 +2,14 @@
 #include "../classes/client_info_mgr.hh"
 #include "../classes/game_client_shell.hh"
 
+float get_fov( const vec3_t& va, const vec3_t& aimpos ) {
+	auto ang = aimpos - va;
+	while ( ang.y <= -180.0f ) ang.y += 360.0f;
+	while ( ang.y > 180.0f ) ang.y -= 360.0f;
+
+	return sqrtf( ang.x * ang.x + ang.y * ang.y );
+}
+
 entity_t* get_closest_entity( camera_t* camera, client_info_t* local_player ) {
 	auto best_distance = FLT_MAX;
 	entity_t* best_target = nullptr;
@@ -10,6 +18,9 @@ entity_t* get_closest_entity( camera_t* camera, client_info_t* local_player ) {
 		if ( !entity || entity->dead( ) || !entity->obj( ) || entity->team( ) == local_player->team( ) )
 			continue;
 
+		const auto calced_fov = get_fov( camera->position( ), utils::calc_angle( camera->position( ), camera->position( ) ) );
+		printf( "calced_fov: %f \n", calced_fov );
+		
 		const auto calculated_distance = camera->position( ).dist_to( entity->obj( )->position( ) );
 		if ( calculated_distance > best_distance )
 			continue;
@@ -17,11 +28,14 @@ entity_t* get_closest_entity( camera_t* camera, client_info_t* local_player ) {
 		best_distance = calculated_distance;
 		best_target = entity;
 	}
-	
+
 	return best_target;
 }
 
 void aimbot::init( ) {
+	if ( !GetAsyncKeyState( VK_XBUTTON2 ) )
+		return;
+
 	auto* player_mgr = base_player_mgr_t::get( );
 	if ( !player_mgr )
 		return;
@@ -29,7 +43,7 @@ void aimbot::init( ) {
 	auto* camera = player_mgr->camera( );
 	if ( !camera )
 		return;
-	
+
 	auto* local_player = client_info_mgr_t::get( )->get_local_player( );
 	if ( !local_player )
 		return;
@@ -38,5 +52,7 @@ void aimbot::init( ) {
 	if ( !entity )
 		return;
 
-	printf( "found best entity with hp: %i \n", entity->health( ) );
+	const auto pos = entity->obj( )->position( );
+	if ( const auto aimangle = utils::calc_angle( pos, camera->position( ) ); !aimangle.empty( ) )
+		player_mgr->viewangles( ) = aimangle;
 }

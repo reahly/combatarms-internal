@@ -7,6 +7,6 @@ struct interface_mgr_t {
 	}
 	
 	bool in_game( ) {
-		return reinterpret_cast<bool( __thiscall* )( void* )>( reinterpret_cast<uintptr_t>( shell_t::get( ) ) + 0x31E7E0 )( this );
+		return reinterpret_cast<bool( __thiscall* )( void* )>( reinterpret_cast<uintptr_t>( shell_t::get( ) ) + 0x31E900 )( this );
 	}
 };
